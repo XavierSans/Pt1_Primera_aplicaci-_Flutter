@@ -31,8 +31,11 @@ class MyAppState extends ChangeNotifier {
   var current = WordPair.random();
 
   // ↓ Add this.
+  // 1- Paraules guardades en llista
+  var paraulesGeneradoes = <WordPair>[];
   void getNext() {
     current = WordPair.random();
+    paraulesGeneradoes.add(current);
     notifyListeners();
   }
 }
@@ -41,13 +44,18 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {           // ← 1
     var appState = context.watch<MyAppState>();  // ← 2
     var pair = appState.current; 
+    // Exercici 2 Pantalla generada amb llista de paraules generades 
+    var paraulesHistoriques = appState.paraulesGeneradoes.lastIndexOf(pair) != -1 ? appState.paraulesGeneradoes : [];
 
     return Scaffold(                             // ← 3
       body: Column(                              // ← 4
         children: [
           Text('A random AWESOME idea:'),   
           BigCard(pair: pair),
-          Text(appState.current.asLowerCase),    // ← 6
+          Text(appState.current.asLowerCase),
+          for (var paraula in paraulesHistoriques) 
+          Text(paraula.asLowerCase),
+
           ElevatedButton(
             onPressed: () {
               appState.getNext();  // ← This instead of print().
