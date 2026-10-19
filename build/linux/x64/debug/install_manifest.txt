@@ -1,0 +1,14 @@
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/flutter_application_1
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin.json
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/NativeAssetsManifest.json
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/shaders/stretch_effect.frag
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin

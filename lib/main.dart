@@ -131,33 +131,77 @@ class GeneratorPage extends StatelessWidget {
     }
 
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          BigCard(pair: pair),
-          SizedBox(height: 10),
-          for (var paraula in paraulesHistoriques) 
-          Text(paraula.asLowerCase),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ElevatedButton.icon(
-                onPressed: () {
-                  appState.toggleFavorite();
-                },
-                icon: Icon(icon),
-                label: Text('Like'),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(height: 20),
+            // Històric
+            Text(
+              'Històric paraules:',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+
+            Container(
+              height: 200,
+              width: double.infinity,
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                border: Border.all(),
+                borderRadius: BorderRadius.circular(10),
               ),
-              SizedBox(width: 10),
-              ElevatedButton(
-                onPressed: () {
-                  appState.getNext();
-                },
-                child: Text('Next'),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // L'última paraula generada apareix primer
+                    // L'última paraula generada apareix primer
+                     for (var paraula in paraulesHistoriques) 
+                      Text(paraula.asLowerCase),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          
+                        ),
+                      ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ],
+            ),
+            // Paraula actual
+            SizedBox(height: 50),
+            BigCard(pair: pair),
+
+            SizedBox(height: 20),
+
+            SizedBox(height: 20),
+
+            // Botons Like i Next
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {
+                    appState.toggleFavorite();
+                  },
+                  icon: Icon(icon),
+                  label: Text('Like'),
+                ),
+
+                SizedBox(width: 10),
+
+                ElevatedButton(
+                  onPressed: () {
+                    appState.getNext();
+                  },
+                  child: Text('Next'),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
