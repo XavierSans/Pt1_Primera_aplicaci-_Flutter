@@ -84,10 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
         if (constraints.maxWidth < 450) {
           // Pantalles petites: navegació inferior
           return Scaffold(
-            body: Container(
-              color: Theme.of(context).colorScheme.primaryContainer,
-              child: page,
-            ),
+            body: MyHomePageContent(page: page),
             bottomNavigationBar: NavigationBar(
               selectedIndex: selectedIndex,
               destinations: [
@@ -134,16 +131,30 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Expanded(
-                  child: Container(
-                    color: Theme.of(context).colorScheme.primaryContainer,
-                    child: page,
-                  ),
+                    child: MyHomePageContent(page: page),
                 ),
               ],
             ),
           );
         }
       },
+    );
+  }
+}
+
+class MyHomePageContent extends StatelessWidget {
+  const MyHomePageContent({
+    super.key,
+    required this.page,
+  });
+
+  final Widget page;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Theme.of(context).colorScheme.primaryContainer,
+      child: page,
     );
   }
 }
