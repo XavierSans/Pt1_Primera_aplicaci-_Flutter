@@ -48,6 +48,10 @@ class MyAppState extends ChangeNotifier {
     }
     notifyListeners();
   }
+  void removeFavorite(WordPair pair) {
+    favorites.remove(pair);
+    notifyListeners();
+  }
 }
 
         
@@ -223,12 +227,20 @@ class FavoritesPage extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(20),
-          child: Text('You have '
-              '${appState.favorites.length} favorites:'),
+          child: Text(
+            'You have ${appState.favorites.length} favorites:',
+          ),
         ),
+
         for (var pair in appState.favorites)
           ListTile(
-            leading: Icon(Icons.favorite),
+            leading: IconButton(
+              icon: Icon(Icons.favorite),
+              tooltip: 'Remove from favorites',
+              onPressed: () {
+                appState.removeFavorite(pair);
+              },
+            ),
             title: Text(pair.asLowerCase),
           ),
       ],
