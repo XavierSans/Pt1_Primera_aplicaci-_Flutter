@@ -64,9 +64,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   var selectedIndex = 0;     // ← Add this property.
   
-@override
+  @override
   Widget build(BuildContext context) {
     Widget page;
+
     switch (selectedIndex) {
       case 0:
         page = GeneratorPage();
@@ -77,44 +78,72 @@ class _MyHomePageState extends State<MyHomePage> {
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
+
     return LayoutBuilder(
       builder: (context, constraints) {
-        return Scaffold(
-          body: Row(
-            children: [
-              SafeArea(
-                child: NavigationRail(
-                  extended: constraints.maxWidth >= 600,  // ← Here.
-                  destinations: [
-                    NavigationRailDestination(
-                      icon: Icon(Icons.home),
-                      label: Text('Home'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.favorite),
-                      label: Text('Favorites'),
-                    ),
-                  ],
-                  selectedIndex: selectedIndex,    // ← Change to this.
-                  onDestinationSelected: (value) {
-        
-                    // ↓ Replace print with this.
-                    setState(() {
-                      selectedIndex = value;
-                    });
-                  },
+        if (constraints.maxWidth < 450) {
+          // Pantalles petites: navegació inferior
+          return Scaffold(
+            body: Container(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: page,
+            ),
+            bottomNavigationBar: NavigationBar(
+              selectedIndex: selectedIndex,
+              destinations: [
+                NavigationDestination(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
                 ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Theme.of(context).colorScheme.primaryContainer,
-                   child: page,  // ← Here.
+                NavigationDestination(
+                  icon: Icon(Icons.favorite),
+                  label: 'Favorites',
                 ),
-              ),
-            ],
-          ),
-        );
-      }
+              ],
+              onDestinationSelected: (value) {
+                setState(() {
+                  selectedIndex = value;
+                });
+              },
+            ),
+          );
+        } else {
+          // Pantalles grans: navegació lateral
+          return Scaffold(
+            body: Row(
+              children: [
+                SafeArea(
+                  child: NavigationRail(
+                    extended: constraints.maxWidth >= 600,
+                    destinations: [
+                      NavigationRailDestination(
+                        icon: Icon(Icons.home),
+                        label: Text('Home'),
+                      ),
+                      NavigationRailDestination(
+                        icon: Icon(Icons.favorite),
+                        label: Text('Favorites'),
+                      ),
+                    ],
+                    selectedIndex: selectedIndex,
+                    onDestinationSelected: (value) {
+                      setState(() {
+                        selectedIndex = value;
+                      });
+                    },
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Theme.of(context).colorScheme.primaryContainer,
+                    child: page,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }
