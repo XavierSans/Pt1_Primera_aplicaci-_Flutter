@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__flutter_application_1_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/linux -B/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug
+  command = /usr/bin/cmake --regenerate-during-build -S/home/xavier/Escriptori/AmpliacioDAM/Pt1_Primera_aplicaci-_Flutter/linux -B/home/xavier/Escriptori/AmpliacioDAM/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug
   description = Re-running CMake...
   generator = 1
 

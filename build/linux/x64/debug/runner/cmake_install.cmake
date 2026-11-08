@@ -1,8 +1,8 @@
-# Install script for directory: /home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/linux/runner
+# Install script for directory: /home/xavier/Escriptori/AmpliacioDAM/Pt1_Primera_aplicaci-_Flutter/linux/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/xavier/Escriptori/AmpliacioDAM/hola/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle")
+  set(CMAKE_INSTALL_PREFIX "/home/xavier/Escriptori/AmpliacioDAM/Pt1_Primera_aplicaci-_Flutter/build/linux/x64/debug/bundle")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -151,25 +151,26 @@ class GeneratorPage extends StatelessWidget {
                 border: Border.all(),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // L'última paraula generada apareix primer
-                    // L'última paraula generada apareix primer
-                     for (var paraula in paraulesHistoriques) 
-                      Text(paraula.asLowerCase),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          
+               child: ListView(
+              children: [
+                for (var paraula in paraulesHistoriques)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      children: [
+                        Icon(
+                          appState.favorites.contains(paraula)
+                              ? Icons.favorite
+                              : Icons.favorite_border,
                         ),
-                      ),
-                  ],
-                ),
-              ),
+                        SizedBox(width: 10),
+                        Text(paraula.asLowerCase),
+                      ],
+                    ),
+                  ),
+              ],
             ),
+          ),
             // Paraula actual
             SizedBox(height: 50),
             BigCard(pair: pair),
