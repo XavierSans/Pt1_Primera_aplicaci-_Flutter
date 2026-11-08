@@ -136,8 +136,14 @@ class GeneratorPage extends StatelessWidget {
         children: [
           BigCard(pair: pair),
           SizedBox(height: 10),
-          for (var paraula in paraulesHistoriques) 
-          Text(paraula.asLowerCase),
+          Expanded(
+            child: ListView(
+              children: [
+                for (var paraula in paraulesHistoriques)
+                  Text(paraula.asLowerCase),
+              ],
+            ),
+          ),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
